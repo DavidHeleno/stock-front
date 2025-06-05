@@ -1,0 +1,10 @@
+INSERT INTO product_category (id, description) VALUES (1, 'Eletrônicos');
+INSERT INTO product_category (id, description) VALUES (2, 'Roupas');
+INSERT INTO product_category (id, description) VALUES (3, 'Alimentos');
+INSERT INTO product_category (id, description) VALUES (4, 'Livros');
+INSERT INTO product_category (id, description) VALUES (5, 'Brinquedos');
+INSERT INTO product_category (id, description) VALUES (6, 'Beleza e Cuidados Pessoais');
+INSERT INTO product_category (id, description) VALUES (7, 'Esportes e Lazer');
+INSERT INTO product_category (id, description) VALUES (8, 'Casa e Decoração');
+INSERT INTO product_category (id, description) VALUES (9, 'Ferramentas');
+INSERT INTO product_category (id, description) VALUES (10, 'Papelaria');
