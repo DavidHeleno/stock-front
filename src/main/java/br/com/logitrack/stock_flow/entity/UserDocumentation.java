@@ -1,6 +1,7 @@
 package br.com.logitrack.stock_flow.entity;
 
 import br.com.logitrack.stock_flow.enuns.DocumentType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -38,6 +39,7 @@ public class UserDocumentation {
     private LocalDateTime createAt = LocalDateTime.now();
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private User user;
 }

@@ -10,6 +10,7 @@ import br.com.logitrack.stock_flow.repository.ProductRepository;
 import br.com.logitrack.stock_flow.repository.StockFlowRepository;
 import br.com.logitrack.stock_flow.repository.UserRepository;
 import br.com.logitrack.stock_flow.service.factory.movimentationFactory.FlowFactory;
+import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.ApproachFlowResponse;
 import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.OutGoingFlowResponse;
 import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.interfaces.FlowRequest;
 import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.interfaces.FlowResponse;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.Flow;
 
 @Service
 public class StockFlowService {
@@ -55,8 +57,8 @@ public class StockFlowService {
         return stock.getId();
     }
 
-    public OutGoingFlowResponse executeStockFlow(FlowRequest form, StockFlowForm stockFlow) {
-        return (OutGoingFlowResponse) flowFactory.executa(stockFlow.event(), form);
+    public ApproachFlowResponse executeStockFlow(FlowRequest form, StockFlowForm stockFlow) {
+        return flowFactory.executa(stockFlow.event(), stockFlow);
     }
 
     public List<StockFlow> getAllByUser(Long userId) {

@@ -10,6 +10,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class OutGoingFlowResponse implements FlowResponse {
 
-    private String name;
+    private Object payload;
 
 }

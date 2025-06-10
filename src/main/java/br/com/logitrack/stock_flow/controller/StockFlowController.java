@@ -3,6 +3,7 @@ package br.com.logitrack.stock_flow.controller;
 import br.com.logitrack.stock_flow.entity.StockFlow;
 import br.com.logitrack.stock_flow.form.StockFlowForm;
 import br.com.logitrack.stock_flow.service.StockFlowService;
+import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.ApproachFlowResponse;
 import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.OutGoingFlowResponse;
 import br.com.logitrack.stock_flow.service.factory.movimentationFactory.model.interfaces.FlowResponse;
 import jakarta.websocket.server.PathParam;
@@ -33,8 +34,8 @@ public class StockFlowController {
         return service.getAllByUser(userId);
     }
 
-    @PostMapping("teste")
-    public ResponseEntity<OutGoingFlowResponse> testeStrategy(@RequestBody StockFlowForm form) {
+    @PostMapping("register/att")
+    public ResponseEntity<ApproachFlowResponse> testeStrategy(@RequestBody StockFlowForm form) {
         return ResponseEntity.ok(service.executeStockFlow(null, form));
     }
 
